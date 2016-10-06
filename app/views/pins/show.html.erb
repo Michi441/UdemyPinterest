@@ -1,29 +1,42 @@
 <div class="container">
 
  
-<%= image_tag @pin.image.url(:medium) %>
+	<%= image_tag @pin.image.url(:medium) %>
 
-<h1><%= @pin.title %></h1>
-<br>
+		<h1><%= @pin.title %></h1>
+	<br>
 
-<p class="description"><%= @pin.description %></p>
+	<p class="description"><%= @pin.description %></p>
 
-<br>
-<br>
-<br>
-<br>
-<p class="user">Posted by <strong><%= @pin.user.name %></p>
+		<br>
+		<br>
+		<br>
+		<br>
+			
+			<p class="user">Posted by <strong><%= @pin.user.name %></p>
 
-<%= link_to "Back", root_path, class:"btn btn-default btn-sm" %>
+			<p><%= link_to like_pin_path(@pin), method: :put, class:"btn-default" do %>  </p>
 
-<% if user_signed_in? %>
-<%= link_to "Edit", edit_pin_path, class:"btn btn-default btn-sm"  %>
-<%= link_to "Delete", pin_path, method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-default btn-sm"  %>
+			<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+
+			<span><%= @pin.get_upvotes.size %></span>
+
+	<% end %>    
 
 
-<% end %>
-</div>
+			<%= link_to "Back", root_path, class:"btn btn-default btn-sm" %>
 
+	<% if user_signed_in? %>
+			<%= link_to "Edit", edit_pin_path, class:"btn btn-default btn-sm"  %>
+
+			<%= link_to "Delete", pin_path, method: :delete, data: {confirm: "Are you sure?"},
+			class:"btn btn-default btn-sm"  %>
+
+
+	<% end %>
+
+
+	</div>
 </div>
 
 
