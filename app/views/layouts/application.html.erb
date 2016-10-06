@@ -7,8 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+	<form class="nav-form navbar-default">
+	<div class="container">
+		<%= link_to "Pinterest", root_path, class:"navbar-brand" %>
 
+
+			<div class="navbar-form navbar-right">
+			
+			
+			
+
+			<% if user_signed_in? %>
+			<%= link_to "Create new pin", new_pin_path, class:"btn btn-primary"%>
+			<%= link_to "Account Settings", edit_user_registration_path, class:"btn btn-primary" %>
+			<%= link_to "Log Out", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-primary" %>
+			<% else %>
+			<%= link_to "Sign Up", new_user_registration_path, class:"btn btn-primary"%>
+			<%= link_to "Sign In", new_user_session_path, class:"btn btn-primary" %>
+			<% end %>
+			
+			</div>
+
+		</div>
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+		</div>
+
+	</form>
 <%= yield %>
 
 </body>
 </html>
+
+

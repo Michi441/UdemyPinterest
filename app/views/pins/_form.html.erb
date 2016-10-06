@@ -1,0 +1,10 @@
+
+<div class="form-group">
+<%= simple_form_for @pin, html: { multipart: true } do|f| %>
+	<%= f.input :image %>
+  	<%= f.input :title %>
+  	<%= f.input :description %>
+  	<%= f.button :submit, class:"btn btn-primary" %>
+<% end %>
+
+</div>

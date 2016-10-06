@@ -1,0 +1,52 @@
+
+  <div id="pins">
+		
+	<p><% @pins.each do |pin| %></p>
+		<div class="box">
+		
+
+		
+   
+    
+        <%= link_to image_tag pin.image.url(:medium)%>
+        
+           
+           <p class="title"><%= link_to pin.title, pin %>
+	
+           </p>
+           
+           <p class="user">By <%= pin.user.name %></p>
+   
+
+  
+
+
+
+
+    <!-- Button trigger modal -->
+
+
+    
+  
+     
+
+		
+		
+		
+		
+		
+		</div>
+	<% end %>
+
+
+
+	
+	
+	
+
+
+
+
+
+
+</div>

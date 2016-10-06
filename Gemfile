@@ -8,11 +8,15 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 
+gem 'jquery-turbolinks', '~> 2.1'
+
 gem 'coffee-script-source', '~> 1.8.0'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
 gem 'paperclip', '~> 5.1'
-
+gem 'devise', '~> 4.2'
+gem 'masonry-rails', '~> 0.2.4'
+gem 'font-awesome-sass'
 
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -26,3 +30,9 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+group :assets do
+  gem 'jquery-ui-rails'
+  gem 'jquery-modal-rails'
+end
