@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.5.1'
-gem 'sqlite3'
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -36,4 +36,14 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :assets do
   gem 'jquery-ui-rails'
   gem 'jquery-modal-rails'
+end
+
+
+group :development do
+	gem 'sqlite3'
+end
+
+group :production do
+	gem "pg"
+	gem "rails_12factor"
 end
