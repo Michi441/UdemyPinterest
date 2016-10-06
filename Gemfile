@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 
@@ -28,6 +28,15 @@ group :development, :test do
 end
 
 group :development do
+	gem 'sqlite3'
+end
+
+group :production do
+	gem "pg"
+	gem "rails_12factor"
+end
+
+group :development do
   gem 'web-console', '~> 2.0'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -39,11 +48,3 @@ group :assets do
 end
 
 
-group :development do
-	gem 'sqlite3'
-end
-
-group :production do
-	gem "pg"
-	gem "rails_12factor"
-end
